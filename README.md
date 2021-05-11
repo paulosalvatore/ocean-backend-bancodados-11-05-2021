@@ -34,6 +34,14 @@
 
 Tecnologias para armazenar e manipular informações.
 
+Database Ranking: https://db-engines.com/en/ranking
+
+### SQL
+
+- Informações são armazenadas em `Tables`
+- A estrutura das `Tables` é definida pelo `Schema`
+- `Tables` possuem registros que seguem esse mesmo `Schema`
+
 **Pessoas**
 
 - id (Primary Key - Chave Primária)
@@ -85,3 +93,15 @@ Tecnologias para armazenar e manipular informações.
     ALTER TABLE cachorros
     ADD FOREIGN KEY (pessoa_id) REFERENCES pessoas(id);
     ```
+
+## SQL vs NoSQL
+
+**SQL:** Modelo relacional
+
+**NoSQL:** Not-only relacional
+
+### MongoDB
+
+- `Tables` do MySQL viram as `Collections`
+- `Collections` armazenam documentos em `JSON`
+- Esses documentos não precisam seguir um `Schema`, por tanto, as `collections` são `schema-less`. Isso significa que os documentos de uma `collection` não precisam respeitar a mesma estrutura.
