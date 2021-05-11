@@ -22,17 +22,43 @@
   - **NoSQL:** MongoDB, Cassandra, DynamoDB, Firebase Realtime Database, Redis, Neo4j
 
 - Query Languages (Linguagens de consulta)
-
 - Apresentação dos softwares para utilização do MongoDB: Mongo Compass ou NoSQLBooster
-
 - Criação da base de dados
-
 - Explicação e Criação da collection
-
 - Entendendo a query language do MongoDB
-
 - Realizando operações simples (inserção, consulta, atualização e remoção) na base de dados
-
 - Integração do MongoDB com o NodeJS utilizando a própria biblioteca do MongoDB
-
 - Substituição das funções de backend desenvolvidas nas aulas anteriores para integrar o CRUD com a base de dados
+
+## O que é banco de dados?
+
+Tecnologias para armazenar e manipular informações.
+
+**Pessoas**
+
+- id (Primary Key - Chave Primária)
+- nome (string - varchar(255))
+
+**Cachorros**
+
+- id (Primary Key - Chave Primária)
+- nome (string - varchar(255))
+- pessoa_id (FK/Foreign Key - Chave Estrangeira)
+
+### CRUD
+
+- **Create**
+
+  - ```sql
+    INSERT INTO `pessoas` (`id`, `nome`) VALUES (NULL, 'Paulo');
+    ```
+
+- **Read**
+
+  - ```sql
+    SELECT * FROM `pessoas`
+    ```
+
+- **Update**
+
+- **Delete**
