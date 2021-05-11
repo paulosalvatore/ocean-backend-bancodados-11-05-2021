@@ -25,11 +25,15 @@ app.get('/hello', function (req, res) {
 
 const mensagens = ['Essa é a primeira mensagem!', 'Essa é a segunda mensagem!'];
 
+const mensagensCollection = db.collection('mensagens');
+
 // CRUD (Create, Read, Update, Delete)
 
 // GET: READ ALL (exibir todos os registros)
-app.get('/mensagens', (req, res) => {
-  res.send(mensagens.filter(Boolean));
+app.get('/mensagens', async (req, res) => {
+  const listaMensagens = await mensagensCollection.find().toArray();
+
+  res.send(listaMensagens);
 });
 
 // GET: READ SINGLE (exibir apenas um registro)
