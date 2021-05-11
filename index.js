@@ -1,4 +1,19 @@
 const express = require('express');
+const { MongoClient, ObjectId } = require('mongodb');
+
+(async () => {
+
+const url = 'mongodb://localhost:27017';
+
+const dbName = 'ocean_bancodados_11_05_2021';
+
+console.info('Conectando ao banco de dados...');
+
+const client = await MongoClient.connect(url, { useUnifiedTopology: true });
+
+console.info('MongoDB conectado com sucesso!!');
+
+const db = client.db(dbName);
 
 const app = express();
 
@@ -62,3 +77,5 @@ app.delete('/mensagens/:id', (req, res) => {
 });
 
 app.listen(3000);
+
+})();
