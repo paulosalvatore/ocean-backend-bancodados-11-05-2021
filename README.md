@@ -105,3 +105,54 @@ Database Ranking: https://db-engines.com/en/ranking
 - `Tables` do MySQL viram as `Collections`
 - `Collections` armazenam documentos em `JSON`
 - Esses documentos não precisam seguir um `Schema`, por tanto, as `collections` são `schema-less`. Isso significa que os documentos de uma `collection` não precisam respeitar a mesma estrutura.
+- Uma grande vantagem do `MongoDB` é que ele permite a realização de consultas dentro dos documentos.
+
+**Pessoas**
+
+- _id (ObjectId - Index)
+- nome (string)
+
+**Cachorros**
+
+- id (ObjectId - Index)
+- nome (string)
+- pessoa_id (ObjectId)
+
+### CRUD
+
+- **Create**
+
+  - ```javascript
+    db.collection.insert({ nome: "Paulo Salvatore" })
+    ```
+
+- **Read**
+
+  - **Read All**
+
+    ```javascript
+    db.collection.find({})
+    ```
+
+  - **Read Single**
+
+    ```javascript
+    db.collection.find({ _id: ObjectId('hash') })
+    ```
+
+- **Update**
+
+  - ```sql
+    db.collection.update(
+    	{ _id: ObjectId('hash') },
+        {
+        	$set: { nome: 'Paulo' }
+        }
+    )
+    ```
+
+- **Delete**
+
+  - ```javascript
+    db.collection.deleteOne({ _id: ObjectId('hash') })
+    ```
