@@ -55,10 +55,33 @@ Tecnologias para armazenar e manipular informações.
 
 - **Read**
 
-  - ```sql
+  - **Read All**
+
+    ```sql
     SELECT * FROM `pessoas`
+    ```
+
+  - **Read Single**
+
+    ```sql
+    SELECT * FROM `pessoas` WHERE `id` = 1
     ```
 
 - **Update**
 
+  - ```sql
+    UPDATE `pessoas` SET `nome` = 'Paulo Salvatore' WHERE `pessoas`.`id` = 1;
+    ```
+
 - **Delete**
+
+  - ```sql
+    DELETE FROM `pessoas` WHERE `pessoas`.`id` = 2
+    ```
+
+- **Criação de Foreign Key**
+
+  - ```sql
+    ALTER TABLE cachorros
+    ADD FOREIGN KEY (pessoa_id) REFERENCES pessoas(id);
+    ```
